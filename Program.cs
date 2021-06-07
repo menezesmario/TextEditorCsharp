@@ -9,7 +9,7 @@ namespace TextEditor
             Menu();
         }
 
-        static void Menu()
+        static void Menu() //1
         {
             Console.Clear();
             Console.WriteLine("O que você deseja fazer?");
@@ -28,15 +28,26 @@ namespace TextEditor
             }
         }
 
-        static void Open()
+        static void Open() //3
         {
 
         }
 
-        static void Edit()
+        static void Edit() //2
         {
+            Console.Clear();
+            Console.WriteLine("Digite seu texto abaixo (ESC para sair)");
+            Console.WriteLine("-----------------------");
+            string text = "";
 
+            do
+            {
+                text += Console.ReadLine();
+                text += Environment.NewLine;
+            }
+            while(Console.ReadKey().Key != ConsoleKey.Escape); //enquanto a tecla digitada não for Esc
+
+            Console.Write(text);
         }
-
     }
 }
